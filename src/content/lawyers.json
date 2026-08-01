@@ -1,0 +1,16 @@
+[
+    {
+      "name": "Abogada Dixy Ondina Cámbar Pineda",
+      "title": "Abogada",
+      "specialty": "Especialista en Derecho Laboral, Civil y Familia.",
+      "image": "/images/lawyer1.jpg",
+      "email": "dixy@servicioslegalescambar.com"
+    },
+    {
+      "name": "Abogado Ricardo Israel Vallejo Cámbar",
+      "title": "Abogado",
+      "specialty": "Especialista en Derecho Corporativo, Mercantil y Notariado.",
+      "image": "/images/lawyer2.jpg",
+      "email": "ricardo@servicioslegalescambar.com"
+    }
+  ]

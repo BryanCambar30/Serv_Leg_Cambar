@@ -1,0 +1,81 @@
+<nav id="main-nav" class="absolute top-0 left-0 w-full z-50 py-6 transition-all duration-300">
+  <div class="max-w-container-max mx-auto px-gutter flex justify-between items-center">
+    
+    <!-- Logo -->
+    <a class="flex items-center gap-3 group" href="#">
+      <div class="bg-white/95 p-1 rounded-sm shadow-md transition-transform group-hover:scale-105">
+        <img alt="Logo Cámbar" class="h-14 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNrijeZe3uccWBFok7Mpzf9FoVOzCflVemGvE6d2-IxR_H-aeNTAVvj8-CD7zH2MdNCkZsTKVyxwMF8_vNDB8TN3nZ9EIEqGk1kdQDVstIqGauWYgEbbk1Hx8yW209pQ--JRCsSA8oPcddHPvNzzvdkB-IeU9uoulff9SOdcflPjWnGntT0FDK8OocS8nnWrgVkTEmQa7QB8fi13RvPgqc_f8bID6HvuUInffh_ObtTleOtZy8IHgJxRND1FbJyOUo"/>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-display-lg text-lg text-gold leading-none font-bold uppercase tracking-tight drop-shadow-md">Servicios Legales</span>
+        <span class="font-display-lg text-lg text-gold leading-none font-bold uppercase tracking-tight drop-shadow-md">Cámbar</span>
+      </div>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-10 font-title-sm text-xs uppercase tracking-widest text-white">
+      <a class="hover:text-gold transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-gold drop-shadow-sm" href="#inicio">Inicio</a>
+      <a class="hover:text-gold transition-colors drop-shadow-sm" href="#nosotros">Nosotros</a>
+      <a class="hover:text-gold transition-colors drop-shadow-sm" href="#servicios">Servicios</a>
+      <a class="hover:text-gold transition-colors drop-shadow-sm" href="#equipo">Equipo</a>
+      <a class="hover:text-gold transition-colors drop-shadow-sm" href="#contacto">Contacto</a>
+    </div>
+
+    <!-- 🟢 BOTÓN DE MENÚ HAMBURGUESA (Móvil) 🟢 -->
+    <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none transition-transform hover:scale-110">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+
+  <!-- 🟢 MENÚ DESPLEGABLE MÓVIL 🟢 -->
+  <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-navy/95 backdrop-blur-md border-b border-gold/30 py-6 px-gutter flex-col gap-4 shadow-xl md:hidden">
+    <a class="text-white hover:text-gold transition-colors font-title-sm text-sm uppercase tracking-widest text-center py-2" href="#inicio">Inicio</a>
+    <a class="text-white hover:text-gold transition-colors font-title-sm text-sm uppercase tracking-widest text-center py-2" href="#nosotros">Nosotros</a>
+    <a class="text-white hover:text-gold transition-colors font-title-sm text-sm uppercase tracking-widest text-center py-2" href="#servicios">Servicios</a>
+    <a class="text-white hover:text-gold transition-colors font-title-sm text-sm uppercase tracking-widest text-center py-2" href="#equipo">Equipo</a>
+    <a class="text-white hover:text-gold transition-colors font-title-sm text-sm uppercase tracking-widest text-center py-2" href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<script>
+  // --- Lógica del Navbar (Scroll y Menú Móvil) ---
+  const nav = document.getElementById('main-nav');
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // 1. Efecto de Scroll (Cambia de transparente a azul con blur)
+  window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+          nav.classList.add('bg-navy/80', 'backdrop-blur-md', 'py-4', 'shadow-lg');
+          nav.classList.remove('py-6');
+      } else {
+          nav.classList.remove('bg-navy/80', 'backdrop-blur-md', 'py-4', 'shadow-lg');
+          nav.classList.add('py-6');
+      }
+  });
+
+  // 2. Toggle del Menú Hamburguesa (Abrir / Cerrar)
+  menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('flex');
+          // Cambia el icono a "cerrar"
+          menuBtn.innerHTML = `<span class="material-symbols-outlined text-3xl">close</span>`;
+      } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+          // Vuelve a poner el icono de "menú"
+          menuBtn.innerHTML = `<span class="material-symbols-outlined text-3xl">menu</span>`;
+      }
+  });
+
+  // 3. Cerrar el menú automáticamente cuando el usuario hace clic en un enlace
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+          menuBtn.innerHTML = `<span class="material-symbols-outlined text-3xl">menu</span>`;
+      });
+  });
+</script>

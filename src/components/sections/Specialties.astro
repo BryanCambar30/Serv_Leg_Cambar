@@ -1,0 +1,45 @@
+---
+// Datos de las especialidades
+const specialties = [
+  "Derecho Laboral",
+  "Derecho Civil",
+  "Derecho Notarial",
+  "Derecho Administrativo",
+  "Derecho de Familia",
+  "Derecho Registral",
+  "Derecho Corporativo"
+];
+---
+
+<section class="py-section-padding bg-surface-container-low" id="especialidades">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16">
+      <h2 class="font-display-lg text-headline-md text-navy uppercase tracking-widest">Especialidades Jurídicas</h2>
+      <div class="diamond-rule">
+        <div class="diamond"></div>
+      </div>
+      <p class="text-on-surface-variant max-w-2xl mx-auto mt-4 font-body-md">
+        Asesoramiento integral y representación en diversas ramas del derecho.
+      </p>
+    </div>
+    
+    <!-- Carrusel Infinito Container -->
+    <div class="relative w-full max-w-full mx-auto overflow-hidden mask-gradient py-4">
+      
+      <!-- La pista del carrusel con la animación CSS -->
+      <div class="infinite-scroll-right gap-12">
+        
+        {/* Renderizamos la lista dos veces para crear el efecto de bucle infinito */}
+        {specialties.concat(specialties).map((item) => (
+          <div class="flex items-center gap-4 snap-center shrink-0 min-w-[220px] bg-white px-6 py-4 rounded-sm shadow-sm border border-navy/5">
+            <span class="diamond-bullet"></span>
+            <span class="text-sm text-navy font-title-sm uppercase tracking-wider whitespace-nowrap">
+              {item}
+            </span>
+          </div>
+        ))}
+        
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+// Datos de los servicios con sus respectivos íconos de Material Symbols Outlined
+const services = [
+  { icon: "diversity_3", name: "Representación legal en audiencias" },
+  { icon: "work", name: "Demandas laborales" },
+  { icon: "diversity_4", name: "Declaratoria de herederos" },
+  { icon: "home", name: "Prescripción adquisitiva de dominio" },
+  { icon: "handshake", name: "Compraventas" },
+  { icon: "card_giftcard", name: "Donaciones" },
+  { icon: "edit_note", name: "Cartas poder" },
+  { icon: "description", name: "Testimonios" },
+  { icon: "verified", name: "Auténticas" },
+  { icon: "public", name: "Apostillas" },
+  { icon: "translate", name: "Traducciones" },
+  { icon: "location_on", name: "Constancias de Situación Catastral" },
+  { icon: "assignment", name: "Certificaciones catastrales" },
+  { icon: "contract", name: "Elaboración y revisión de contratos" },
+  { icon: "folder_open", name: "Trámites administrativos y registrales" },
+  { icon: "groups", name: "Constitución de sociedades" },
+  { icon: "security", name: "Antecedentes penales y policiales" },
+  { icon: "article", name: "Certificaciones de nacimiento, matrimonio, defunción y soltería" },
+  { icon: "content_copy", name: "Copias íntegras y de folio" },
+  { icon: "school", name: "Homologación de títulos" },
+  { icon: "gavel", name: "Autorizaciones y permisos legales" }
+];
+---
+
+<section class="py-section-padding bg-white" id="servicios">
+  <div class="max-w-6xl mx-auto px-gutter">
+    
+    <!-- Encabezado con la Píldora Azul y borde dorado -->
+    <div class="relative border-2 border-gold/60 rounded-[40px] pt-14 pb-10 px-6 mb-16 mt-8">
+      <!-- Título tipo píldora flotando arriba -->
+      <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-navy text-gold px-12 py-4 rounded-full shadow-md">
+        <h2 class="font-display-lg text-headline-md uppercase tracking-widest font-bold">Nuestros Servicios</h2>
+      </div>
+      
+      <!-- Grid de 2 Columnas para los 21 servicios -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 max-w-5xl mx-auto mt-2">
+        {services.map((service) => (
+          <div class="flex items-start gap-4 py-2 px-3 rounded-sm hover:bg-gold/5 transition-colors group">
+            <span class="material-symbols-outlined text-navy text-2xl transition-transform group-hover:scale-110">
+              {service.icon}
+            </span>
+            <span class="text-[15px] text-navy font-body-md leading-snug">
+              {service.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+  </div>
+</section>

@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-on-surface font-body-md antialiased selection:bg-gold selection:text-white;
+  }
+}
+
+@layer utilities {
+  .diamond-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto;
+    width: 40%;
+  }
+  .diamond-rule::before, .diamond-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #B8860B;
+  }
+  .diamond-rule::before { margin-right: 15px; }
+  .diamond-rule::after { margin-left: 15px; }
+  .diamond {
+    width: 8px;
+    height: 8px;
+    background-color: #B8860B;
+    transform: rotate(45deg);
+  }
+  .diamond-bullet {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #B8860B;
+    transform: rotate(45deg);
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  /* Animación de desplazamiento infinito hacia la derecha */
+  @keyframes scrollRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Se mueve la mitad de su ancho total */
+  }
+  
+  .infinite-scroll-right {
+    display: flex;
+    width: max-content;
+    animation: scrollRight 60s linear infinite; /* 20s es la duración total del ciclo */
+  }
+  
+  /* Pausar la animación al pasar el mouse */
+  .infinite-scroll-right:hover {
+    animation-play-state: paused;
+  }
+}

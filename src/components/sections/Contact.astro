@@ -1,0 +1,54 @@
+---
+import Button from '../ui/Button.astro';
+import Input from '../ui/Input.astro';
+---
+
+<section id="contacto" class="relative pt-16 pb-8 bg-primary text-white overflow-hidden">
+  
+  <!-- Onda superior Azul petróleo claro -->
+  <div class="absolute top-0 left-0 right-0 w-full overflow-hidden leading-[0] rotate-180 z-10">
+    <svg class="relative block w-[calc(110%+1.3px)] h-[40px] md:h-[60px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-primary-light"></path>
+    </svg>
+  </div>
+
+  <div class="relative z-20 container mx-auto px-4 max-w-4xl text-center">
+    <h2 class="font-serif text-3xl font-bold text-secondary mb-8 uppercase tracking-wider">CONTÁCTENOS</h2>
+
+    <!-- Formulario con inputs blancos cuadrados -->
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-8">
+      <Input placeholder="Nombre" />
+      <Input placeholder="Correo Electrónico" />
+      <Input placeholder="Teléfono" />
+      <Input placeholder="Asunto" />
+      
+      <div class="md:col-span-2">
+        <textarea placeholder="Mensaje" class="w-full bg-white border border-gray-300 rounded-sm px-4 py-2.5 h-24 text-neutral placeholder:text-gray-400 focus:border-secondary focus:outline-none transition-colors shadow-sm resize-none"></textarea>
+      </div>
+    </form>
+
+    <button class="bg-secondary text-white px-14 py-2 rounded-full font-sans text-sm font-bold shadow-lg hover:brightness-110 transition-all uppercase tracking-wide mb-12">
+      Enviar
+    </button>
+  </div>
+
+  <!-- Footer con la información de contacto -->
+  <div class="relative z-20 container mx-auto px-4 max-w-6xl text-center border-t border-white/10 pt-8 mt-4">
+    <p class="text-white font-bold text-sm tracking-widest uppercase mb-4">
+      Profesionalismo | Ética | Confidencialidad | Compromiso
+    </p>
+    
+    <div class="flex flex-col md:flex-row justify-between items-center text-xs text-white/80 text-left gap-6 md:gap-0">
+      <div class="flex flex-col gap-1">
+        <p><span class="font-semibold">Teléfonos:</span> (70)599-322-3428, (90)599-323-4567</p>
+        <p><span class="font-semibold">Email:</span> info@servicioslegalescambar.com</p>
+        <p><span class="font-semibold">Dirección:</span> Av. Principal 135, 6to Piso, Ciudad</p>
+      </div>
+      
+      <div class="flex flex-col items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/60 mb-1"><path d="M12 2v20"/><path d="M2 12h20"/><path d="M4.93 4.93l14.14 14.14"/><path d="M19.07 4.93L4.93 19.07"/></svg>
+        <span class="text-xs text-white/60">www.servicioslegales.com</span>
+      </div>
+    </div>
+  </div>
+</section>
