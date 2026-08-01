@@ -65,4 +65,9 @@
   .infinite-scroll-right:hover {
     animation-play-state: paused;
   }
+
+  .img-redonda {
+    @apply w-40 h-40 rounded-full overflow-hidden object-cover;
+  }
+  
 }
