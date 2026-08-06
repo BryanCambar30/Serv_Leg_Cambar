@@ -69,5 +69,17 @@
   .img-redonda {
     @apply w-40 h-40 rounded-full overflow-hidden object-cover;
   }
+
+  #footer {
+    background-image: url("/assets/img/screenFooter.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 500px auto;  
+  }
+  @media (max-width: 768px) {
+    #footer {
+      background-size: 300px auto;  
+    }
+  }
   
 }
